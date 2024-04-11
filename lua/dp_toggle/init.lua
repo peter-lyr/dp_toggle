@@ -54,9 +54,9 @@ end
 M.renu = function()
   local winid = vim.fn.win_getid()
   if B.is(vim.o.relativenumber) then
-    vim.cmd "windo lua M._renu_dis()"
+    vim.cmd "windo lua require 'dp_toggle'._renu_dis()"
   else
-    vim.cmd "windo lua M._renu_en()"
+    vim.cmd "windo lua require 'dp_toggle'._renu_en()"
   end
   print('vim.o.relativenumber:', vim.o.relativenumber)
   vim.fn.win_gotoid(winid)
@@ -91,9 +91,9 @@ end
 M.nu = function()
   local winid = vim.fn.win_getid()
   if B.is(vim.o.number) then
-    vim.cmd "windo lua M._nu_dis()"
+    vim.cmd "windo lua require 'dp_toggle'._nu_dis()"
   else
-    vim.cmd "windo lua M._nu_en()"
+    vim.cmd "windo lua require 'dp_toggle'._nu_en()"
   end
   print('vim.o.number:', vim.o.number)
   vim.fn.win_gotoid(winid)
