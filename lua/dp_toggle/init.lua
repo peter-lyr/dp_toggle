@@ -27,7 +27,7 @@ M.wrap = function()
   if vim.o.wrap == true then
     vim.cmd 'windo set nowrap'
   else
-    vim.cmd "windo lua require 'dp_togge'._wrap_en()"
+    vim.cmd "windo lua require 'dp_toggle'._wrap_en()"
   end
   print('vim.o.wrap:', vim.o.wrap)
   vim.fn.win_gotoid(winid)
