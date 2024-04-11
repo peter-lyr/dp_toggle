@@ -134,7 +134,6 @@ M.iskeyword = function()
 end
 
 require 'which-key'.register {
-  ['<leader>t'] = { name = 'toggle', },
   ['<leader>td'] = { function() M.diff() end, 'diff', mode = { 'n', 'v', }, silent = true, },
   ['<leader>tw'] = { function() M.wrap() end, 'wrap', mode = { 'n', 'v', }, silent = true, },
   ['<leader>tn'] = { function() M.nu() end, 'nu', mode = { 'n', 'v', }, silent = true, },
