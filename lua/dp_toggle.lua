@@ -4,6 +4,13 @@ local sta, B = pcall(require, 'dp_base')
 
 if not sta then return print('Dp_base is required!', debug.getinfo(1)['source']) end
 
+if B.check_plugins {
+      'git@github.com:peter-lyr/dp_init',
+      'folke/which-key.nvim',
+    } then
+  return
+end
+
 M.diff = function()
   if vim.o.diff == false then
     vim.cmd 'diffthis'
