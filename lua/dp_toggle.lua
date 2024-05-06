@@ -140,17 +140,15 @@ M.iskeyword = function()
   print(vim.o.iskeyword)
 end
 
-function M._map()
-  require 'which-key'.register {
-    ['<leader>tg'] = { name = 'toggle', },
-    ['<leader>tgd'] = { function() M.diff() end, 'diff', mode = { 'n', 'v', }, silent = true, },
-    ['<leader>tgw'] = { function() M.wrap() end, 'wrap', mode = { 'n', 'v', }, silent = true, },
-    ['<leader>tgn'] = { function() M.nu() end, 'nu', mode = { 'n', 'v', }, silent = true, },
-    ['<leader>tgr'] = { function() M.renu() end, 'renu', mode = { 'n', 'v', }, silent = true, },
-    ['<leader>tgs'] = { function() M.signcolumn() end, 'signcolumn', mode = { 'n', 'v', }, silent = true, },
-    ['<leader>tgc'] = { function() M.conceallevel() end, 'conceallevel', mode = { 'n', 'v', }, silent = true, },
-    ['<leader>tgk'] = { function() M.iskeyword() end, 'iskeyword', mode = { 'n', 'v', }, silent = true, },
-  }
-end
+require 'which-key'.register {
+  ['<leader>tg'] = { name = 'toggle', },
+  ['<leader>tgd'] = { function() M.diff() end, 'diff', mode = { 'n', 'v', }, silent = true, },
+  ['<leader>tgw'] = { function() M.wrap() end, 'wrap', mode = { 'n', 'v', }, silent = true, },
+  ['<leader>tgn'] = { function() M.nu() end, 'nu', mode = { 'n', 'v', }, silent = true, },
+  ['<leader>tgr'] = { function() M.renu() end, 'renu', mode = { 'n', 'v', }, silent = true, },
+  ['<leader>tgs'] = { function() M.signcolumn() end, 'signcolumn', mode = { 'n', 'v', }, silent = true, },
+  ['<leader>tgc'] = { function() M.conceallevel() end, 'conceallevel', mode = { 'n', 'v', }, silent = true, },
+  ['<leader>tgk'] = { function() M.iskeyword() end, 'iskeyword', mode = { 'n', 'v', }, silent = true, },
+}
 
 return M
