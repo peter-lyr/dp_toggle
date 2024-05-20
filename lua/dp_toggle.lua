@@ -117,6 +117,15 @@ M.signcolumn = function()
   vim.fn.win_gotoid(winid)
 end
 
+M.cursorcolumn = function()
+  if vim.o.cursorcolumn == false then
+    vim.cmd 'set cursorcolumn'
+  else
+    vim.cmd 'set nocursorcolumn'
+  end
+  print('vim.o.cursorcolumn:', vim.o.cursorcolumn)
+end
+
 M.conceallevel = function()
   local winid = vim.fn.win_getid()
   if vim.o.conceallevel == 0 then
@@ -147,6 +156,7 @@ require 'which-key'.register {
   ['<leader>tgn'] = { function() M.nu() end, 'nu', mode = { 'n', 'v', }, silent = true, },
   ['<leader>tgr'] = { function() M.renu() end, 'renu', mode = { 'n', 'v', }, silent = true, },
   ['<leader>tgs'] = { function() M.signcolumn() end, 'signcolumn', mode = { 'n', 'v', }, silent = true, },
+  ['<leader>tgm'] = { function() M.cursorcolumn() end, 'cursorcolumn', mode = { 'n', 'v', }, silent = true, },
   ['<leader>tgc'] = { function() M.conceallevel() end, 'conceallevel', mode = { 'n', 'v', }, silent = true, },
   ['<leader>tgk'] = { function() M.iskeyword() end, 'iskeyword', mode = { 'n', 'v', }, silent = true, },
 }
