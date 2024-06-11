@@ -26,7 +26,7 @@ function M._wrap_en()
   if B.is_in_tbl(vim.o.ft, DoNotCloseFileTypes) then
     return
   end
-  vim.o.wrap = 1
+  vim.o.wrap = true
 end
 
 M.wrap = function()
